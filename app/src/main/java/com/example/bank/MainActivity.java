@@ -1,6 +1,7 @@
 package com.example.bank;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -34,26 +35,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.login);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//прозрачный фон
-        dialog.setCancelable(false);//окно нельзя закрыть кнопкой назад
-        //кнопка отмена
-        Button cancel = dialog.findViewById(R.id.cancle);
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    Intent i = new Intent();
-
-                }catch (Exception e){
-
-                }
-            }
-        });
-        dialog.show();
-
 
 
         /*dollar = findViewById(R.id.textView3);
@@ -67,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         String d = simpleDataFormat.format(c.getTime());
         String f = simpleDataFormatUrl.format(c.getTime());
         data.setText(d);
+
+
 
         final String url = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=" + f;
 
@@ -99,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();*/
 
+    }
+
+    public void Login(View view) {
+        FragmentManager manager = getSupportFragmentManager();
+        DialogFragmentClass myDialogFragment = new DialogFragmentClass();
+        myDialogFragment.show(manager, "Login");
     }
 
     private String download(String urlPath) throws IOException {
