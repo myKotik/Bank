@@ -1,19 +1,10 @@
 package com.example.bank;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
-import android.annotation.SuppressLint;
-import android.app.Dialog;
-import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,13 +13,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView data, dollar, euro;
-    Dialog dialog;
+    android.app.Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,11 +74,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void Login(View view) {
-        FragmentManager manager = getSupportFragmentManager();
-        DialogFragmentClass myDialogFragment = new DialogFragmentClass();
-        myDialogFragment.show(manager, "Login");
+    //диалог
+    public void showDialog(View v) {
+
+        DialogFragmentClass dialogFragmentClass = new DialogFragmentClass();
+        dialogFragmentClass.show(getSupportFragmentManager(), "custom");
     }
+
 
     private String download(String urlPath) throws IOException {
         StringBuilder xmlResult = new StringBuilder();
