@@ -1,7 +1,6 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="MyDialog" parent="@android:style/Theme.Dialog">
-<!--        <item name="android:windowBackground">#1E1E1E</item>-->
-<!--        <item name="android:windowIsFloating">false</item>-->
-<!--        <item name="android:gravity">center</item>-->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyDialog" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:background">#232323</item>
     </style>
 </resources>

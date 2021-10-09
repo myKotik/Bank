@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        /*dollar = findViewById(R.id.textView3);
-        euro = findViewById(R.id.textView4);*/
+        dollar = findViewById(R.id.usd);
+        euro = findViewById(R.id.eur);
 
         //Дата 
         data = findViewById(R.id.data);
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         final String url = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=" + f;
 
 
-      /*  new Thread(() -> {
+        new Thread(() -> {
             try {
                 String content = download(url);
 
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException ex) {
                 Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
             }
-        }).start();*/
+        }).start();
 
     }
 
