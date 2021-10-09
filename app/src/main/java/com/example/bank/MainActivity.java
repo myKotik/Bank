@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                 }
-
             } catch (IOException ex) {
                 Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
             }
